@@ -1,4 +1,4 @@
-# Inventario de su equipo
+# Inventario de mi equipo
 
 **Modelo del equipo:**  
 Gigabyte B550M K
@@ -43,14 +43,14 @@ Windows 10 Home x64 (10.0.19045)
   - SQLite (por Django)
 
 # Actualización de software
-
 - **Visual Studio Code**  
-  Última versión: **1.84.0**
-  
+  Última versión: **1.104.0**  
+  `winget upgrade --id Microsoft.VisualStudioCode`  
+  [changelog](https://github.com/microsoft/vscode/issues?q=is%3Aissue+is%3Aclosed+milestone%3A%22August+2025+Recovery+1%22+)
+
 - **Eclipse IDE**  
   Última versión: **Eclipse IDE 2023-09 (4.27)**
 
-Ambos entornos de desarrollo han sido actualizados a sus últimas versiones estables para asegurar la compatibilidad con los lenguajes y frameworks más recientes, y para mejorar la estabilidad y el rendimiento.
 
 # Las propuestas de sostenibilidad
 
@@ -70,9 +70,8 @@ Ambos entornos de desarrollo han sido actualizados a sus últimas versiones esta
    Implementar prácticas para minimizar la redundancia en el trabajo, como automatizar tareas repetitivas y usar herramientas que mejoren la eficiencia en el flujo de trabajo.
 
 # Reflexión personal sobre lo aprendido
+Mantener el software al día no solo sirve para tener las últimas mejoras y funciones, sino también para evitar problemas de seguridad. Me he dado cuenta de que tener las herramientas y el entorno de desarrollo bien cuidados hace que todo vaya mucho más fluido y sin tantos fallos.
 
-Mantener el software actualizado es crucial no solo para obtener las últimas mejoras de rendimiento y características, sino también para garantizar que el equipo esté protegido contra vulnerabilidades de seguridad. He aprendido que un buen mantenimiento de las herramientas y del entorno de desarrollo puede tener un impacto directo en la eficiencia y estabilidad del trabajo diario.
+También me parece importante pensar en cómo podemos hacer nuestro trabajo un poco más sostenible. A veces no nos paramos a pensar en el impacto que tiene lo que hacemos, pero cosas pequeñas como usar menos la nube o evitar procesos innecesarios pueden reducir bastante nuestra huella de carbono.
 
-Además, ser consciente de las prácticas sostenibles y cómo aplicar soluciones más ecológicas en el desarrollo de software es una forma importante de contribuir al cuidado del medio ambiente. Aunque muchas veces no se piensa en el impacto ambiental de nuestras herramientas y procesos, cada pequeña acción, como reducir el uso de la nube o evitar procesos repetitivos, ayuda a disminuir la huella de carbono de nuestra actividad diaria.
-
-En resumen, se trata de ser más eficientes en todo lo que hacemos: desde el uso de la tecnología hasta la optimización del código y las herramientas de desarrollo. Cada cambio hacia la sostenibilidad, por más pequeño que sea, tiene un efecto positivo tanto en el rendimiento como en el medio ambiente.
+Al final, se trata de ser más eficientes en todo: en cómo usamos la tecnología, en cómo escribimos código y en cómo gestionamos nuestras herramientas. Cada pequeño cambio que hacemos hacia algo más sostenible mejora tanto nuestro rendimiento como el impacto que dejamos en el planeta.

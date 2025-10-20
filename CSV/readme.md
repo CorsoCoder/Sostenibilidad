@@ -12,7 +12,7 @@ Este programa tiene como finalidad **leer un archivo CSV** que contiene datos de
 
 1. **Clase `Registro`**
 
-   * Es una clase auxiliar que representa una fila del CSV.
+   * Es una clase que representa una fila del CSV.
    * Guarda tres atributos:
 
      * `codigo`: identificador numérico.

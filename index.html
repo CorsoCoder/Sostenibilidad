@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador Visual de Formularios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="main-header">
+        <h1>🛠️ Generador Visual de Formularios</h1>
+        <p>Diseña formularios web visualmente y obtén el código generado automáticamente</p>
+    </header>
+
+    <main class="main-container">
+        <!-- Left Panel: Configuration -->
+        <aside class="config-panel">
+            <div class="panel-header">
+                <h2>Configuración del Formulario</h2>
+            </div>
+
+            <!-- Form Settings -->
+            <section class="config-section">
+                <h3>⚙️ Ajustes del Formulario</h3>
+                <div class="form-group">
+                    <label for="form-id">ID del formulario:</label>
+                    <input type="text" id="form-id" value="my-form" placeholder="mi-formulario">
+                </div>
+                <div class="form-group">
+                    <label for="form-action">Action URL:</label>
+                    <input type="text" id="form-action" value="#" placeholder="/submit">
+                </div>
+                <div class="form-group">
+                    <label for="form-method">Método:</label>
+                    <select id="form-method">
+                        <option value="POST">POST</option>
+                        <option value="GET">GET</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Add Field Section -->
+            <section class="config-section">
+                <h3>➕ Añadir Campo</h3>
+                <div class="add-field-buttons">
+                    <button type="button" class="btn btn-add" data-type="text" title="Campo de texto">📝 Texto</button>
+                    <button type="button" class="btn btn-add" data-type="email" title="Campo de email">✉️ Email</button>
+                    <button type="button" class="btn btn-add" data-type="password" title="Campo de contraseña">🔒 Password</button>
+                    <button type="button" class="btn btn-add" data-type="number" title="Campo numérico">🔢 Número</button>
+                    <button type="button" class="btn btn-add" data-type="date" title="Campo de fecha">📅 Fecha</button>
+                    <button type="button" class="btn btn-add" data-type="textarea" title="Área de texto">📄 Textarea</button>
+                    <button type="button" class="btn btn-add" data-type="checkbox" title="Casilla de verificación">☑️ Checkbox</button>
+                    <button type="button" class="btn btn-add" data-type="radio" title="Botones de opción">🔘 Radio</button>
+                    <button type="button" class="btn btn-add" data-type="select" title="Lista desplegable">📋 Select</button>
+                    <button type="button" class="btn btn-add" data-type="file" title="Subir archivo">📁 Archivo</button>
+                    <button type="button" class="btn btn-add" data-type="submit" title="Botón de envío">🚀 Submit</button>
+                    <button type="button" class="btn btn-add" data-type="reset" title="Botón de reset">🔄 Reset</button>
+                    <button type="button" class="btn btn-add btn-fieldset" data-type="fieldset" title="Grupo de campos">📦 Fieldset</button>
+                </div>
+            </section>
+
+            <!-- Fields List -->
+            <section class="config-section">
+                <h3>📋 Campos del Formulario</h3>
+                <div id="fields-list" class="fields-list">
+                    <p class="empty-message">No hay campos. Añade uno usando los botones de arriba.</p>
+                </div>
+            </section>
+
+            <!-- Actions -->
+            <section class="config-section">
+                <h3>💾 Acciones</h3>
+                <div class="action-buttons">
+                    <button type="button" class="btn btn-secondary" id="btn-save-config" title="Guardar configuración">💾 Guardar Config</button>
+                    <button type="button" class="btn btn-secondary" id="btn-load-config" title="Cargar configuración">📂 Cargar Config</button>
+                    <button type="button" class="btn btn-secondary" id="btn-clear-all" title="Limpiar todo">🗑️ Limpiar Todo</button>
+                    <input type="file" id="config-file-input" accept=".json" style="display: none;">
+                </div>
+            </section>
+        </aside>
+
+        <!-- Right Panel: Preview and Code -->
+        <section class="preview-panel">
+            <div class="tabs">
+                <button type="button" class="tab-btn active" data-tab="preview">👁️ Vista Previa</button>
+                <button type="button" class="tab-btn" data-tab="html">📄 HTML</button>
+                <button type="button" class="tab-btn" data-tab="css">🎨 CSS</button>
+                <button type="button" class="tab-btn" data-tab="js">⚡ JavaScript</button>
+            </div>
+
+            <div class="tab-content">
+                <!-- Preview Tab -->
+                <div id="tab-preview" class="tab-pane active">
+                    <div class="preview-container">
+                        <div id="form-preview" class="form-preview">
+                            <p class="empty-message">La vista previa aparecerá aquí cuando añadas campos.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- HTML Tab -->
+                <div id="tab-html" class="tab-pane">
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>Código HTML</span>
+                            <button type="button" class="btn btn-copy" data-copy="html" title="Copiar HTML">📋 Copiar</button>
+                        </div>
+                        <pre><code id="code-html" class="code-block"></code></pre>
+                    </div>
+                </div>
+
+                <!-- CSS Tab -->
+                <div id="tab-css" class="tab-pane">
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>CSS Base + Personalizado</span>
+                            <button type="button" class="btn btn-copy" data-copy="css" title="Copiar CSS">📋 Copiar</button>
+                        </div>
+                        <pre><code id="code-css" class="code-block"></code></pre>
+                        <div class="custom-css-section">
+                            <label for="custom-css">CSS Personalizado:</label>
+                            <textarea id="custom-css" placeholder="/* Añade tu CSS personalizado aquí */"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- JS Tab -->
+                <div id="tab-js" class="tab-pane">
+                    <div class="code-container">
+                        <div class="code-header">
+                            <span>JavaScript (Validación)</span>
+                            <button type="button" class="btn btn-copy" data-copy="js" title="Copiar JS">📋 Copiar</button>
+                        </div>
+                        <div class="js-options">
+                            <label>
+                                <input type="checkbox" id="include-validation" checked>
+                                Incluir validación básica
+                            </label>
+                        </div>
+                        <pre><code id="code-js" class="code-block"></code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copy All Button -->
+            <div class="copy-all-section">
+                <button type="button" class="btn btn-primary btn-large" id="btn-copy-all" title="Copiar todo el código">
+                    📋 Copiar Todo (HTML + CSS + JS)
+                </button>
+                <button type="button" class="btn btn-secondary btn-large" id="btn-export" title="Exportar archivos">
+                    📥 Exportar Archivos
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Field Editor Modal -->
+    <div id="field-editor-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Editar Campo</h3>
+                <button type="button" class="btn-close" id="modal-close">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="modal-cancel">Cancelar</button>
+                <button type="button" class="btn btn-primary" id="modal-save">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <footer class="main-footer">
+        <p>Generador Visual de Formularios - Herramienta offline sin dependencias externas</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,3 +1,9 @@
+# ¡Hola! 👋
+
+Bienvenido/a al repositorio de **Sostenibilidad**. Este proyecto documenta el inventario de equipos, prácticas de desarrollo sostenible y herramientas utilizadas.
+
+---
+
 # Inventario de mi equipo
 
 **Modelo del equipo:**  
